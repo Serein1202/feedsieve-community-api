@@ -10,12 +10,12 @@ SNAP_VERSION=$(node -p "require('./data/snapshots/manifest.json').snapshot_versi
 PACK_VERSION=$(node -p "require('./data/keyword-packs/manifest.json').pack_version")
 
 echo "上传社区名单快照 (version=$SNAP_VERSION) ..."
-wrangler r2 object put "$BUCKET/snapshots/latest.json" --file=data/snapshots/manifest.json
-wrangler r2 object put "$BUCKET/snapshots/$SNAP_VERSION/official.json" --file=data/snapshots/official.json
-wrangler r2 object put "$BUCKET/snapshots/$SNAP_VERSION/blocklist.yaml" --file=data/snapshots/blocklist.yaml
+wrangler r2 object put "$BUCKET/snapshots/latest.json" --file=data/snapshots/manifest.json --remote
+wrangler r2 object put "$BUCKET/snapshots/$SNAP_VERSION/official.json" --file=data/snapshots/official.json --remote
+wrangler r2 object put "$BUCKET/snapshots/$SNAP_VERSION/blocklist.yaml" --file=data/snapshots/blocklist.yaml --remote
 
 echo "上传关键词词库 (version=$PACK_VERSION) ..."
-wrangler r2 object put "$BUCKET/keyword-packs/latest.json" --file=data/keyword-packs/manifest.json
-wrangler r2 object put "$BUCKET/keyword-packs/$PACK_VERSION/official.json" --file=data/keyword-packs/official.json
+wrangler r2 object put "$BUCKET/keyword-packs/latest.json" --file=data/keyword-packs/manifest.json --remote
+wrangler r2 object put "$BUCKET/keyword-packs/$PACK_VERSION/official.json" --file=data/keyword-packs/official.json --remote
 
 echo "完成。快照=$SNAP_VERSION  词库=$PACK_VERSION"
