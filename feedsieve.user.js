@@ -7,7 +7,7 @@
 // @name         FeedSieve
 // @name:zh-CN   FeedSieve 垃圾账号清理
 // @namespace    https://github.com/Serein1202/feedsieve-community-api
-// @version      0.1.0
+// @version      1.0
 // @description  Visible first, block only. Mark spam accounts with a yellow box on x.com and block them through the page's own native endpoint. Never hides content. Local detect. Community list.
 // @description:zh-CN  可见优先，拉黑唯一。在 x.com 用黄框标注垃圾账号，经页面自身原生接口拉黑，永不隐藏内容。
 // @author       Serein1202 (originally by chendahuang)
