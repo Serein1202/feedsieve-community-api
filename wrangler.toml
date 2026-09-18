@@ -1,0 +1,12 @@
+name = "feedsieve-community-api"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+
+[observability]
+enabled = true
+
+# 单一 R2 bucket：同时存放社区名单快照（snapshots/）与公开关键词词库（keyword-packs/）。
+# 只需在 Cloudflare 后台建一个名为 feedsieve-data 的 bucket，无需 database_id。
+[[r2_buckets]]
+binding = "DATA"
+bucket_name = "feedsieve-data"
