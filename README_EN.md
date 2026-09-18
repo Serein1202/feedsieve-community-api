@@ -19,12 +19,22 @@ report/rescue/contribution stats, D1 database and scheduled snapshot generation.
 Both the blocklist and the keyword packs are pre-reviewed **static artifacts** committed to the repo — upload them to R2 once.
 No database, no migrations, no IDs, no secrets.
 
-> **About the default API address**: The userscript defaults to the official community API
-> `https://feedsieve-api.chendahuang.com`. That official API is currently **offline**. This does **not** break the
+> **About the default API address**: The userscript defaults to the original author's community API
+> `https://feedsieve-api.chendahuang.com` (original repo is now 404, that API is offline). This does **not** break the
 > userscript — it ships with complete offline fallback data (see [Offline fallback & data sources](#offline-fallback--data-sources)).
 > If you want to sync fresh blocklists / keyword packs yourself, self-host the backend
 > ([Self-hosting the backend](#self-hosting-the-backend-step-by-step)) and point the script at it
 > ([Point the userscript at your API](#point-the-userscript-at-your-api)).
+
+---
+
+## Acknowledgments
+
+This project is a "self-hosted lite" fork of [chendahuang/feedsieve](https://github.com/realchendahuang/feedsieve)
+(original repo is now 404). It strips out the parts that only matter for multi-user collaboration — D1, admin panel,
+report/rescue/contribution stats, secrets — and reshapes the backend into a read-only, single-R2-bucket form.
+
+Many thanks to **chendahuang** for the original architecture and community design.
 
 ---
 
@@ -407,6 +417,14 @@ falsely — the terminal says done, but the live bucket is empty.
 
 **Q: `*.workers.dev` is slow / unreachable in my region — what can I do?**
 Bind a custom domain (Worker → Settings → Triggers → Custom Domains) and use that domain in the script.
+
+---
+
+## Links
+
+- 🐒 [Userscript](https://github.com/Serein1202/feedsieve-community-api) (`feedsieve.user.js` in this repo) — MIT
+- ☁️ [Self-hosted backend](https://github.com/Serein1202/feedsieve-community-api) (`src/` in this repo) — MIT
+- 📦 Upstream project: [realchendahuang/feedsieve](https://github.com/realchendahuang/feedsieve) (repo is now 404)
 
 ---
 

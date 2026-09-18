@@ -17,10 +17,18 @@
 它面向「一个人自用」的场景：后端**只保留读接口**，去掉了原版的管理员后台、举报/抢救/贡献统计、D1 数据库和定时快照生成。
 名单与词库都是仓库里预审过的**静态产物**，一次性上传到 R2 即可，没有建库、迁移、填 ID、设密钥这些步骤。
 
-> **关于默认 API 地址**：油猴脚本默认指向官方社区 API `https://feedsieve-api.chendahuang.com`。
+> **关于默认 API 地址**：油猴脚本默认指向原作者的官方社区 API `https://feedsieve-api.chendahuang.com`（原项目仓库已 404，该 API 已停服）。
 > 该官方 API 目前**已停止服务**。不过**这不影响脚本使用** —— 脚本内置了完整的离线数据兜底（详见
 > [离线兜底与数据来源](#离线兜底与数据来源)）。若你想独立同步最新名单/词库，请按
 > [自托管后端](#自托管后端详细步骤) 自建，再按 [让脚本用你的 API](#让脚本用你的-api) 接入。
+
+---
+
+## 致谢
+
+本项目是 FeedSieve 的「自托管精简版」，基于 [chendahuang/feedsieve](https://github.com/realchendahuang/feedsieve)（原仓库已 404）的原始项目改造而来：移除 D1 / 管理后台 / 举报贡献 / 密钥等仅多人协作才需要的部分，将整个后端改造为只读、单一 R2 的轻量形态。
+
+感谢原作者 **chendahuang** 设计的原始架构与社区方案。
 
 ---
 
@@ -383,6 +391,14 @@ wrangler 4.x 的 `r2 object put` 默认写本地模拟 R2。不加 `--remote` �
 
 **Q：`*.workers.dev` 国内访问慢 / 不通怎么办？**
 绑定自定义域名（Worker → Settings → Triggers → Custom Domains），脚本里填该域名。
+
+---
+
+## 相关链接
+
+- 🐒 [油猴脚本](https://github.com/Serein1202/feedsieve-community-api)（本仓库 `feedsieve.user.js`）：MIT
+- ☁️ [可选自托管后端](https://github.com/Serein1202/feedsieve-community-api)（本仓库 `src/`）：MIT
+- 📦 上游原始项目：[realchendahuang/feedsieve](https://github.com/realchendahuang/feedsieve)（仓库已 404）
 
 ---
 

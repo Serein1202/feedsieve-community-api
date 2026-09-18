@@ -1,11 +1,16 @@
+// FeedSieve 自托管精简版。
+// 本脚本基于 chendahuang 的原始 FeedSieve（realchendahuang/feedsieve，原仓库已 404）
+// 改造为只读自托管版本（移除 D1/后台/举报/密钥，名单与词库作为静态产物上传到 R2）。
+// 致谢原作者 chendahuang 的设计与实现。维护者：Serein1202。
+//
 // ==UserScript==
 // @name         FeedSieve
 // @name:zh-CN   FeedSieve 垃圾账号清理
-// @namespace    https://github.com/realchendahuang/feedsieve
+// @namespace    https://github.com/Serein1202/feedsieve-community-api
 // @version      0.1.0
 // @description  Visible first, block only. Mark spam accounts with a yellow box on x.com and block them through the page's own native endpoint. Never hides content. Local detect. Community list.
 // @description:zh-CN  可见优先，拉黑唯一。在 x.com 用黄框标注垃圾账号，经页面自身原生接口拉黑，永不隐藏内容。
-// @author       FeedSieve contributors
+// @author       Serein1202 (originally by chendahuang)
 // @license      MIT
 // @match        https://x.com/*
 // @match        https://twitter.com/*
